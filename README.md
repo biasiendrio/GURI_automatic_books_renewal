@@ -11,7 +11,7 @@ O que precisa ser instalado para poder executar e como instalar.
 
 ### Instalação 
 Para instalar o **python**, caso não seja um sistema Unix/Linux, vá até a seção de [downloads](https://www.python.org/downloads/).
-Para instalr a bibliotéca **selenium**, caso tenha o [pip](https://pypi.org/project/pip/) no sistema:
+Para instalar a bibliotéca **selenium**, caso tenha o [pip](https://pypi.org/project/pip/) no sistema:
 
 > pip install selenium
 
