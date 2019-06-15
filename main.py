@@ -20,7 +20,7 @@ class Renovador:
     def run(self):
         self.realiza_login()
         self.seleciona_livros()
-        # self.renova_livros()
+        self.renova_livros()
 
     # realiza login na pagina do GURI
     def realiza_login(self):
