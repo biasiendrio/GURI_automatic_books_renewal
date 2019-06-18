@@ -49,4 +49,5 @@ class sistemaGURI:
     def renova_livros(self):
         renovar = self.browser.find_element_by_css_selector("span.button_text")
         renovar.click()
+        time.sleep(2)
         print("Livros renovados")
