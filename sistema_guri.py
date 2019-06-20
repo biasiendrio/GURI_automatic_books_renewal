@@ -1,5 +1,5 @@
 from selenium import webdriver
-import time
+import time, re
 
 
 class sistemaGURI:
@@ -11,7 +11,7 @@ class sistemaGURI:
     def run(self):
         self.realiza_login()
         self.seleciona_livros()
-        self.renova_livros()
+        # self.renova_livros()
     
     # realiza login na pagina do GURI
     def realiza_login(self):
@@ -38,12 +38,15 @@ class sistemaGURI:
                 livros.append(iten.text)
 
         livros = livros[9:]
-
+    
+        p = re.compile(r'(\d{1,2})')
         for nome, vancimento, renovar in zip(range(0,len(itens_tabela),6), range(4,len(itens_tabela),6), para_renovar):
-            if livros[vancimento][0] != '10':
+            num_renovacoes = int(re.search(p, livros[vancimento])[0])
+            if num_renovacoes != 10:
                 renovar.click()
             else:
                 print(f"DEVOLVER: {livros[nome][:-2]}")
+        # self.browser.save_screenshot("teste.png")
     
     # renovar livros selecionados
     def renova_livros(self):
